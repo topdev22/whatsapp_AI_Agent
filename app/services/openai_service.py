@@ -72,7 +72,7 @@ def generate_response(message_body, wa_id, name):
     # Check if there is already a thread_id for the wa_id
     thread_id = check_if_thread_exists(wa_id)
 
-    # If a thread doesn't exist, create one and store it
+    # Check if there is already a thread_id for the wa_id
     if thread_id is None:
         logging.info(f"Creating new thread for {name} with wa_id {wa_id}")
         thread = client.beta.threads.create()
