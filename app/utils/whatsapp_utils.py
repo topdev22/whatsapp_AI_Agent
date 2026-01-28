@@ -48,7 +48,7 @@ def send_message(data):
         return jsonify({"status": "error", "message": "Request timed out"}), 408
     except (
         requests.RequestException
-    ) as e:  # This will catch any general request exception
+    ) as e:  # This will catch any general request exception Raises an HTTPErro if the HTTP request returned on unsuccessful status code
         logging.error(f"Request failed due to: {e}")
         return jsonify({"status": "error", "message": "Failed to send message"}), 500
     else:
